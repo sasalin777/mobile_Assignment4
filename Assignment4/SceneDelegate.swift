@@ -24,14 +24,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     let tabVC = UITabBarController()
     window?.rootViewController = tabVC
-    
+      
+//    let tabDVC = UITabBarController()
+//    window?.rootViewController = tabDVC
+//
+
     // 5 cities
     let vancouver = City(name: "Vancouver", temp: 15, precipitation: 95, icon: "canada", summary: "Rainy")
     let verona = City(name: "Verona", temp: 22, precipitation: 20, icon: "italy", summary: "Cloudy")
-    let tokyo = City(name: "Tokyo", temp: 24, precipitation: 40, icon: "italy", summary: "Sunny")
+    let tokyo = City(name: "Tokyo", temp: 24, precipitation: 40, icon: "japan", summary: "Sunny")
     let saoPaulo = City(name: "Sao Paulo", temp: 32, precipitation: 20, icon: "brazil", summary: "Sunny")
     let seoul = City(name: "Seoul", temp: 35, precipitation: 50, icon: "skorea", summary: "Sunny")
+      
+//      let vancouver = City(name: "Vancouver", temp: 15, precipitation: 95, icon: "🇨🇦", summary: "Rainy")
+//      let verona = City(name: "Verona", temp: 22, precipitation: 20, icon: "🇮🇹", summary: "Cloudy")
+//      let tokyo = City(name: "Tokyo", temp: 24, precipitation: 40, icon: "🇯🇵", summary: "Sunny")
+//      let saoPaulo = City(name: "Sao Paulo", temp: 32, precipitation: 20, icon: "🇧🇷", summary: "Sunny")
+//      let seoul = City(name: "Seoul", temp: 35, precipitation: 50, icon: "🇰🇷", summary: "Sunny")
+//
+//
     
+      
     let vanVC = CityViewController()
     vanVC.city = vancouver
     vanVC.tabBarItem = UITabBarItem(title: vancouver.name, image: UIImage(named: vancouver.icon), selectedImage: nil)
@@ -50,7 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let cities = [vanVC, verVC, tokVC, spVC, seoulVC]
     
     tabVC.viewControllers = cities.map { UINavigationController(rootViewController: $0) }
-    
+      
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {

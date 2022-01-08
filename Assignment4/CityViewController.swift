@@ -11,6 +11,7 @@ import UIKit
 class CityViewController: UIViewController {
 
 	var city: City!
+   
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -26,16 +27,24 @@ class CityViewController: UIViewController {
 		butt.setTitle("See Details...", for: .normal)
 		butt.layer.cornerRadius = 10.0
 		butt.addTarget(self, action: #selector(showWeatherDetails), for: .touchUpInside)
-		
+        
+       
 		view.addSubview(cityLabel)
 		view.addSubview(butt)
 	}
   
+    
     @objc func showWeatherDetails() {
       
         let detailCL = DetailsViewController()
+        detailCL.city = city
         self.navigationController?.pushViewController(detailCL, animated: true)
+        
+
+               
+            
+        }
     
   }
-}
+
 
